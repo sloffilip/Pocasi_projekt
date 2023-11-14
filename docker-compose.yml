@@ -14,6 +14,6 @@ services:
     depends_on:
       - db
     volumes:
-      - ./myproject:/code/myproject
+      - ./predpocasi:/code/predpocasi
     command: python ./manage.py runserver 0:8000
     restart: unless-stopped
