@@ -76,7 +76,7 @@ WSGI_APPLICATION = "predpocasi.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "myproject",
+        "NAME": "predpocasi",
         "USER": "root",
         "PASSWORD": "root",
         "HOST": "db",
