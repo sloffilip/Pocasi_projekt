@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/stable/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/stable/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_extensions",
     "predpocasi.pocasi",
 ]
 
@@ -80,7 +81,7 @@ DATABASES = {
         "NAME": "predpocasi",
         "USER": "root",
         "PASSWORD": "root",
-        "HOST": "db",
+        "HOST": os.environ.setdefault("DB_HOST", "db"),
         "PORT": "3306",
         "OPTIONS": {
             "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
