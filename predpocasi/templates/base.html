@@ -11,14 +11,22 @@
             <ul>
                 <li><a href="{% url "index" %}">F1 Počasí</a></li>
                 {% if user.is_authenticated %}
+                <li><a href="{% url "add_place" %}">Přidání trati</a></li>
                 <li><a href="{% url "password_change" %}">Změna hesla</a></li>
-                <li><a href="{% url "login" %}">Odhlášení</a></li>
+                <li><a href="{% url "login" %}">Přihlášení</a></li>
                 {% else %}
-                <li><a href="{% url "logout" %}">Přihlášení</a></li>
+                <li><a href="{% url "logout" %}">Odhlášení</a></li>
                 {% endif %}
             </ul>  
         </nav>      
         <main>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
             {% block content %}{% endblock %}
         </main>
     </body>

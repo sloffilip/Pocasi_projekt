@@ -3,3 +3,13 @@ body {
     max-width: 1000px;
     margin: 0 auto;
 }
+
+.messages li {
+    display: block;
+    padding: 10px;
+    margin: 0;
+}
+
+.messages li.info{
+    background-color: aquamarine;
+}

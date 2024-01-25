@@ -2,6 +2,12 @@
 
 {% block content %}
     <h1>{% block title %}Počasíčko{% endblock %}</h1>
+    {% if user.is_authenticated %}
+        {% for %}
+
+        {% endfor %}
+    {% else %}
     <p>Toto je titulní strana vašeho projektu.</p>
     <p>Zde napíšete vlastní text dle potřeby.</p>
+{% endif %}
 {% endblock %}
